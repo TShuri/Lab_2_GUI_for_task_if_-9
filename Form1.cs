@@ -32,15 +32,15 @@ namespace lab2_GUI_
             Properties.Settings.Default.c = c;
             Properties.Settings.Default.Save();
 
-            MessageBox.Show("Произведение двух наименьших из трех: " + Logic.Compare(a, b ,c)); // Вывод сообщения
+            MessageBox.Show("Произведение двух наименьших из трех: " + Logic.Compare(a, b, c)); ; // Вывод сообщения
         }
     }
     public class Logic
     {
-        public static string Compare(int _a, int _b, int _c)
+        public static int Compare(int _a, int _b, int _c)
         {
             int max; // Объявление вспомогательной переменной
-            string outMessage = ""; // Объявление переменной для вывода сообщения
+            int outNum; // Объявление переменной для вывода сообщения
 
             if (_a > _b)
             { // Нахождение двух наименьших из трех чисел
@@ -50,13 +50,13 @@ namespace lab2_GUI_
             {
                 max = _b;
             };
-            if (_c > _b)
+            if (_c > max)
             {
                 max = _c;
             }
-            outMessage = (_a * _b * _c / max).ToString(); // Произведение двух наименьших из трех чисел
+            outNum = (_a * _b * _c / max); // Произведение двух наименьших из трех чисел
 
-            return outMessage; // Возвращение значения функции
+            return outNum; // Возвращение значения функции
         }
     }
 }
